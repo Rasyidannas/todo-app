@@ -8,6 +8,9 @@ const taskSlice = createSlice({
   name: "tasks",
   initialState,
   reducers: {
+    replaceTasks(state, action) {
+      state.tasks = action.payload;
+    },
     add(state, action) {
       state.tasks = state.tasks.concat(action.payload);
       localStorage.setItem("tasks", JSON.stringify(state.tasks));

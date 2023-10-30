@@ -7,6 +7,7 @@ import { useState } from "react";
 function TaskList() {
   //retrive tasks from redux
   const tasks = useSelector((state) => state.tasks);
+  console.log(tasks);
 
   //nav link active
   const [linkActive, setLinkActive] = useState("all");
@@ -42,7 +43,7 @@ function TaskList() {
   const completedTasks = tasks.filter((task) => task.completed === true);
 
   return (
-    <div className="bg-veryLightGray rounded">
+    <div className="rounded bg-veryLightGray">
       {/* show allTasks */}
       {all &&
         tasks.map((task) => (
