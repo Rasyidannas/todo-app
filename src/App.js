@@ -5,13 +5,11 @@ import bgDesktopLight from "../src/assets/images/bg-desktop-light.jpg";
 import Card from "./components/UI/Card";
 import BackgroundHeader from "./components/Layout/BackgroundHeader";
 import CreateTodo from "./components/Form/CreateTodo";
-import Button from "./components/UI/Button";
-import IconSun from "./components/Icons/IconSun";
-import IconMoon from "./components/Icons/IconMoon";
 import TaskList from "./components/Task/TaskList";
 import { useDispatch } from "react-redux";
 import { fetchTasksData } from "./store/task-action";
 import { useEffect } from "react";
+import DarkMode from "./components/Switch/DarkMode";
 
 export default function App() {
   const dispatch = useDispatch();
@@ -27,13 +25,9 @@ export default function App() {
       <Card className="absolute flex flex-col w-2/5 gap-8 -translate-x-1/2 top-16 left-1/2">
         <div className="flex w-full ">
           <h1 className=" text-veryLightGray">TODO</h1>
+          {/* Switch dark mode */}
           <div className="ml-auto">
-            <Button>
-              <IconSun />
-            </Button>
-            <Button>
-              <IconMoon />
-            </Button>
+            <DarkMode />
           </div>
         </div>
         <CreateTodo />

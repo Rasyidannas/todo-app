@@ -55,7 +55,7 @@ function CreateTodo() {
         {completed && <IconCheck />}
       </Button>
       <input
-        className="py-4 pl-14 pr-8 w-full rounded text-lg bg-veryLightGray"
+        className="w-full py-4 pr-8 text-lg rounded pl-14 bg-veryLightGray dark:bg-verydarkDesaturatedBlue"
         type="text"
         placeholder="Create a new todo..."
         value={todoValue}

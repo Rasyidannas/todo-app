@@ -7,7 +7,6 @@ import { useState } from "react";
 function TaskList() {
   //retrive tasks from redux
   const tasks = useSelector((state) => state.tasks);
-  console.log(tasks);
 
   //nav link active
   const [linkActive, setLinkActive] = useState("all");
