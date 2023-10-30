@@ -12,6 +12,8 @@ import { useEffect } from "react";
 import DarkMode from "./components/Switch/DarkMode";
 
 export default function App() {
+  const theme = localStorage.getItem("theme");
+
   const dispatch = useDispatch();
 
   //get data from localStorage
@@ -21,7 +23,8 @@ export default function App() {
 
   return (
     <>
-      <BackgroundHeader imgSrc={bgDesktopLight} />
+      {theme === "light" && <BackgroundHeader imgSrc={bgDesktopLight} />}
+      {theme === "dark" && <BackgroundHeader imgSrc={bgDesktopDark} />}
       <Card className="absolute flex flex-col w-2/5 gap-8 -translate-x-1/2 top-16 left-1/2">
         <div className="flex w-full ">
           <h1 className=" text-veryLightGray">TODO</h1>

@@ -42,7 +42,7 @@ function TaskList() {
   const completedTasks = tasks.filter((task) => task.completed === true);
 
   return (
-    <div className="rounded bg-veryLightGray">
+    <div className="rounded bg-veryLightGray dark:bg-verydarkDesaturatedBlue drop-shadow-lightShadow dark:drop-shadow-darkShadow">
       {/* show allTasks */}
       {all &&
         tasks.map((task) => (

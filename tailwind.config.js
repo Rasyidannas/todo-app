@@ -23,7 +23,12 @@ module.exports = {
     fontFamily: {
       sans: ["Josefin Sans", "sans-serif"],
     },
-    extend: {},
+    extend: {
+      dropShadow: {
+        lightShadow: "0 2rem 2rem #d2d3db",
+        darkShadow: "0 2rem 2rem #010101",
+      },
+    },
   },
   plugins: [],
 };

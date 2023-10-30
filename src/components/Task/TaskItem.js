@@ -19,10 +19,10 @@ function TaskItem({ taskTitle, taskId, completed }) {
   };
 
   return (
-    <div className="flex gap-4 px-8 py-4 border-b border-lightGrayishBlue">
+    <div className="flex gap-4 px-8 py-4 border-b border-lightGrayishBlue dark:border-veryDarkGrayishBlue group cursor-pointer">
       {/* check */}
       <Button
-        className={`w-6 h-6 rounded-2xl border border-lightGrayishBlue flex items-center justify-center ${
+        className={`w-6 h-6 rounded-2xl border border-lightGrayishBlue dark:border-veryDarkGrayishBlue flex items-center justify-center ${
           completed ? "check-background" : "bg-transparent"
         }`}
         type="button"
@@ -31,7 +31,7 @@ function TaskItem({ taskTitle, taskId, completed }) {
         {completed && <IconCheck />}
       </Button>
       <p
-        className={`text-lg ${
+        className={`text-lg dark:text-lightGrayishBlue ${
           completed ? "line-through text-darkGrayishBlue" : ""
         }`}
       >
@@ -39,7 +39,7 @@ function TaskItem({ taskTitle, taskId, completed }) {
       </p>
       {/* remove */}
       <Button
-        className="flex items-center justify-center ml-auto"
+        className="flex items-center justify-center ml-auto invisible group-hover:visible transition-all"
         type="button"
         onClick={removedHandler.bind(null, taskId)}
       >

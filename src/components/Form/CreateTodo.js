@@ -32,7 +32,7 @@ function CreateTodo() {
 
   //this is for dispacth data to redux
   const enterHandler = (event) => {
-    if (event.key === "Enter" && !todoHasEmpty) {
+    if (event.key === "Enter" && !todoHasEmpty && todoValid) {
       const todoPayload = {
         id: uuidv4(),
         title: todoValue,
@@ -46,7 +46,7 @@ function CreateTodo() {
   return (
     <div className="relative">
       <Button
-        className={` absolute top-1/2 left-4 -translate-y-1/2 w-6 h-6 rounded-2xl border border-lightGrayishBlue flex items-center justify-center ${
+        className={` absolute top-1/2 left-8 -translate-y-1/2 w-6 h-6 rounded-2xl border border-lightGrayishBlue dark:border-veryDarkGrayishBlue flex items-center justify-center ${
           completed ? "check-background" : "bg-transparent"
         }`}
         type="button"
@@ -55,7 +55,7 @@ function CreateTodo() {
         {completed && <IconCheck />}
       </Button>
       <input
-        className="w-full py-4 pr-8 text-lg rounded pl-14 bg-veryLightGray dark:bg-verydarkDesaturatedBlue"
+        className="w-full py-4 pr-8 text-lg rounded pl-[4.5rem] bg-veryLightGray dark:bg-verydarkDesaturatedBlue dark:text-lightGrayishBlue"
         type="text"
         placeholder="Create a new todo..."
         value={todoValue}
