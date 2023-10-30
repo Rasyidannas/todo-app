@@ -10,20 +10,22 @@ const taskSlice = createSlice({
   reducers: {
     add(state, action) {
       state.tasks = state.tasks.concat(action.payload);
+      localStorage.setItem("tasks", JSON.stringify(state.tasks));
     },
     completed(state, action) {
-      // state.tasks = state.tasks.filter((item) => item !== action.payload);
       const existTaskIndex = state.tasks.find(
         (task) => task.id === action.payload
       );
       existTaskIndex.completed = !existTaskIndex.completed;
-      // console.log(existTaskIndex);
+      localStorage.setItem("tasks", JSON.stringify(state.tasks));
     },
     removed(state, action) {
       state.tasks = state.tasks.filter((task) => task.id !== action.payload);
+      localStorage.setItem("tasks", JSON.stringify(state.tasks));
     },
     reset(state) {
       state.tasks = [];
+      localStorage.removeItem("tasks");
     },
   },
 });
