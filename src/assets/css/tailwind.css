@@ -1,3 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&family=Monoton&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+    /* 1rem = 16px */
+    font-size: 100%;
+  }
+
+  body {
+    @apply font-sans bg-veryLightGray dark:bg-veryDarkBlue;
+  }
+
+  h1 {
+    @apply font-bold text-4xl;
+  }
+}
+
+@layer components {
+  .check-background {
+    background: linear-gradient(
+      135deg,
+      hsl(192, 100%, 67%),
+      hsl(280, 87%, 65%)
+    );
+  }
+}
