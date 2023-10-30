@@ -6,16 +6,10 @@ import { useEffect, useState } from "react";
 function DarkMode() {
   const [theme, setTheme] = useState("light");
 
-  const lightHandler = () => {
-    setTheme("light");
+  const switchHandler = (value) => {
+    setTheme(value);
 
-    localStorage.setItem("theme", "light");
-  };
-
-  const darkHandler = () => {
-    setTheme("dark");
-
-    localStorage.setItem("theme", "dark");
+    localStorage.setItem("theme", value);
   };
 
   useEffect(() => {
@@ -24,19 +18,20 @@ function DarkMode() {
     } else {
       document.documentElement.classList.remove("dark");
     }
-
-    //store in localStorage
-    //  localStorage.setItem("theme", JSON.stringify(theme));
   }, [theme]);
 
   return (
     <>
-      <Button onClick={lightHandler}>
-        <IconSun />
-      </Button>
-      <Button onClick={darkHandler}>
-        <IconMoon />
-      </Button>
+      {theme !== "light" && (
+        <Button onClick={switchHandler.bind(null, "light")}>
+          <IconSun />
+        </Button>
+      )}
+      {theme !== "dark" && (
+        <Button onClick={switchHandler.bind(null, "dark")}>
+          <IconMoon />
+        </Button>
+      )}
     </>
   );
 }
