@@ -1,19 +1,21 @@
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { themeActions } from "../../store/theme-slice";
+
 import Button from "../UI/Button";
 import IconSun from "../Icons/IconSun";
 import IconMoon from "../Icons/IconMoon";
-import { useEffect, useState } from "react";
 
 function DarkMode() {
-  const [theme, setTheme] = useState("light");
+  const dispatch = useDispatch();
+  const theme = useSelector((state) => state.darkMode.theme);
 
   const switchHandler = (value) => {
-    setTheme(value);
-
-    localStorage.setItem("theme", value);
+    dispatch(themeActions.setTheme(value));
   };
 
   useEffect(() => {
-    if (localStorage.theme === "dark") {
+    if (localStorage.theme === "dark" && theme === "dark") {
       document.documentElement.classList.add("dark");
     } else {
       document.documentElement.classList.remove("dark");

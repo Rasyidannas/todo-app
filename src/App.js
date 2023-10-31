@@ -6,13 +6,13 @@ import Card from "./components/UI/Card";
 import BackgroundHeader from "./components/Layout/BackgroundHeader";
 import CreateTodo from "./components/Form/CreateTodo";
 import TaskList from "./components/Task/TaskList";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { fetchTasksData } from "./store/task-action";
 import { useEffect } from "react";
 import DarkMode from "./components/Switch/DarkMode";
 
 export default function App() {
-  const theme = localStorage.getItem("theme");
+  const theme = useSelector((state) => state.darkMode.theme);
 
   const dispatch = useDispatch();
 

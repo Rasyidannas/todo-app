@@ -3,7 +3,7 @@ import themeSlice from "./theme-slice";
 import taskSlice from "./task-slice";
 
 const store = configureStore({
-  reducer: { tasks: taskSlice.reducer, theme: themeSlice.reducer },
+  reducer: { todo: taskSlice.reducer, darkMode: themeSlice.reducer },
 });
 
 export default store;
