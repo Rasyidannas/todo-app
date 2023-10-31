@@ -15,7 +15,7 @@ function DarkMode() {
   };
 
   useEffect(() => {
-    if (localStorage.theme === "dark" && theme === "dark") {
+    if (localStorage.theme === "dark") {
       document.documentElement.classList.add("dark");
     } else {
       document.documentElement.classList.remove("dark");

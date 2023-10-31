@@ -10,6 +10,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchTasksData } from "./store/task-action";
 import { useEffect } from "react";
 import DarkMode from "./components/Switch/DarkMode";
+import { fetchTheme } from "./store/theme-action";
 
 export default function App() {
   const theme = useSelector((state) => state.darkMode.theme);
@@ -19,6 +20,7 @@ export default function App() {
   //get data from localStorage
   useEffect(() => {
     dispatch(fetchTasksData());
+    dispatch(fetchTheme());
   }, [dispatch]);
 
   return (
