@@ -17,7 +17,7 @@ function CreateTodo() {
   const dispacth = useDispatch();
 
   // valication for inoout new todo
-  const isTodo = (value) => value.match(/^[A-Za-z0-9/&$. ]+$/);
+  const isTodo = (value) => value.match(/^(?![ ])[A-Za-z0-9/&$.,()! -]+$/);
 
   // costum hooks for input
   const {

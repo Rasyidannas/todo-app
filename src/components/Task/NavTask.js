@@ -17,7 +17,7 @@ function NavTask({
   };
 
   return (
-    <div className="flex justify-between px-8 py-4">
+    <div className="hidden md:flex justify-between px-8 py-4">
       <p className=" text-sm text-darkGrayishBlue">
         {countActive > 1 ? `${countActive} items ` : `${countActive} item `}
         left
