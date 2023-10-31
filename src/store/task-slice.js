@@ -1,4 +1,4 @@
-import { createSlice, configureStore } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   tasks: [],
@@ -33,10 +33,6 @@ const taskSlice = createSlice({
   },
 });
 
-const store = configureStore({
-  reducer: taskSlice.reducer,
-});
-
 export const taskActions = taskSlice.actions;
 
-export default store;
+export default taskSlice;
