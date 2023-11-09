@@ -24,7 +24,7 @@ function DarkMode() {
 
   return (
     <>
-      {theme !== "light" && (
+      {theme === "dark" && (
         <Button onClick={switchHandler.bind(null, "light")}>
           <IconSun />
         </Button>

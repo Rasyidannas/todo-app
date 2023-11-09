@@ -27,7 +27,7 @@ export default function App() {
 
   return (
     <>
-      {theme === "light" && (
+      {theme !== "dark"  && (
         <BackgroundHeader
           imgSrcDesktop={bgDesktopLight}
           imgSrcMobile={bgMobileLight}
